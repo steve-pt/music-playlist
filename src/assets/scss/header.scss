@@ -1,7 +1,7 @@
 @import "_config.scss";
 
 header {
-    position: absolute;
+    position: fixed;
     left:0;
     top:0;
     z-index: 2;
@@ -11,7 +11,6 @@ header {
     margin:0 auto;
     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
 
-    
     @include tablet {
         height: 65px;
     }
@@ -22,8 +21,6 @@ header {
 }
 
 header .logo {
-    display:block;
-    vertical-align: middle;
     text-align:left;
     @include font-render(32px, $color-base, 400,  $font-alt);
 

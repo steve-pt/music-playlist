@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
-
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 // components
 import Header from './components/headerComponent/header';
 import Footer from './components/footerComponent/footer';
-import Homepage from './components/pages/homepage';
 import List from './components/pages/list';
 import Show from './components/pages/show';
 
@@ -21,9 +15,14 @@ class App extends Component {
       <Router>
       <div className="App">
         <Header />
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/list" component={List} />
-          <Route exact path="/show" component={Show} />
+          <div className="container">
+            <div className="tbl">
+              <div className="tblcell">
+                <Route exact path="/" component={List} />
+                <Route path="/show/:id" component={Show} />
+              </div>
+            </div>
+          </div>
         <Footer />
       </div>
       </Router>

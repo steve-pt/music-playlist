@@ -1,7 +1,7 @@
 $bg-color:#333;
 $color-base:#fff;
-$font-base:'Roboto', Helvetica, Arial, sans-serif;
-$font-alt:'Pacifico', 'Roboto', Helvetica, Arial, sans-serif;
+$font-base:'Open Sans', Helvetica, Arial, sans-serif;
+$font-alt:'Pacifico', 'Open Sans', Helvetica, Arial, sans-serif;
 
 @function calculateRem($size) {
     $remSize: $size / 16px;
