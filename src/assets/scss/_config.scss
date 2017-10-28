@@ -1,0 +1,35 @@
+$bg-color:#333;
+$color-base:#fff;
+$font-base:'Roboto', Helvetica, Arial, sans-serif;
+$font-alt:'Pacifico', 'Roboto', Helvetica, Arial, sans-serif;
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-render($size: false, $colour: false, $weight: false,  $font: false) {
+    @if $size { font-size: $size; font-size: calculateRem($size); }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $font { font-family: $font; }
+}
+
+
+@mixin desktop {
+  @media only screen  and (min-width : 1500px){
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media only screen  and (min-width : 700px) and (max-width : 1220px){
+      @content;
+    }
+  }
+  
+  @mixin mobile {
+    @media only screen and (max-width : 700px){
+      @content;
+    }
+  }

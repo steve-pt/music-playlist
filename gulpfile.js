@@ -3,8 +3,11 @@
 //Dependencies
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+var please = require('gulp-pleeease');
 var rename = require('gulp-rename');
 var changed = require('gulp-changed');
 
@@ -19,8 +22,13 @@ gulp.task('compile_scss',function(){
 
     gulp.src(SCSS_SRC)
     .pipe(sass().on('error',sass.logError))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
     .pipe(minifyCSS())
-    .pipe(rename({suffix: '.min'}))
+    .pipe(please())
+    .pipe(concat("default.min.css"))
     .pipe(changed(SCSS_DEST))
     .pipe(gulp.dest(SCSS_DEST));
 });
