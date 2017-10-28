@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 
 
@@ -41,7 +41,10 @@ export default class Show extends React.Component {
       ));
       return (
         <div className="show">
-        <div className="title">Show da Música</div>
+        <div className="title">
+          Show da Música
+          <Link className="close" to="/">x</Link>
+        </div>
         { show }
         
     </div>

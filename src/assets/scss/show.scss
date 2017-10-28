@@ -17,21 +17,37 @@
 }
 
 .show .title {
+    position: relative;
     width:100%;
-    padding:20px 20px;
+    padding:20px 40px 20px 20px;
     box-sizing: border-box;
     @include font-render(16px, $color-base, 700);
     
     @include tablet {
-        padding:15px;
+        padding:15px 40px 15px 15px;
     }
 
     @include mobile {
-        padding:10px;
+        padding:10px 40px 10px 10px;
         font-size:14px;
     }
 }
 
+.show .title .close {
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:20px;
+    width:30px;
+    height:30px;
+    line-height:28px;
+    border-radius: 15px;
+    background: #333;
+    margin:auto;
+    display:block;
+    text-align: center;
+    @include font-render(18px, $color-base, 400);
+}
 // -------------------------------------------------------------------
 // MUSICA
 // -------------------------------------------------------------------
