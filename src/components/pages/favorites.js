@@ -25,7 +25,7 @@ export default class Favorites extends React.Component {
               this.setState({Favorites:responseData});
           })
     } else {
-        <Redirect to={'/'} />
+        return (<Redirect to={'/'} />);
     }
   }
   render() {

@@ -30,12 +30,13 @@ export default class Login extends React.Component {
                             sessionStorage.setItem("isUserLogged", true);
                             sessionStorage.setItem('userData',JSON.stringify(user));
                             this.setState({redirectToReferrer: true});
-                            return;
                         }
+                        return this.state.redirectToReferrer;
                     });
 
                     if(!sessionStorage.getItem('isUserLogged'))
                         alert("Email não encontrado!");
+                    
                 })
         }
     }

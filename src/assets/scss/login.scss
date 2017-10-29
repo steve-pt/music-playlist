@@ -6,7 +6,7 @@
 
 .login .form {
     display:block;
-    width:90%;
+    width:96%;
     padding: 20px;
     box-sizing: border-box;
     margin: 0 auto;
@@ -18,11 +18,19 @@
     @include font-render(18px, #FFF, 700);
     text-align: left;
     margin-bottom:10px;
+    
+    @include tablet {
+        font-size:16px;
+    }
+
+    @include mobile {
+        font-size:14px;
+    }
 }
 
 .login .input {
     display:block;
-    width: 90%;
+    width: 92%;
     display: block;
     height: 45px;
     line-height: 43px;
@@ -31,6 +39,17 @@
     border: 0;
     @include font-render(16px, #FFF, 400);
     margin-bottom:20px;
+    
+    @include tablet {
+        height: 35px;
+        line-height: 33px;
+    }
+
+    @include mobile {
+        height: 35px;
+        line-height: 33px;
+        font-size:14px;
+    }
 }
 
 .login .button {
@@ -48,4 +67,14 @@
     text-transform: uppercase;
     letter-spacing:2px;
     cursor: pointer;
+    
+    @include tablet {
+        height:44px;
+        line-height: 42px;
+    }
+
+    @include mobile {
+        height:44px;
+        line-height: 42px;
+    }
 }

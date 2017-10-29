@@ -16,13 +16,13 @@ class Header extends Component {
     render() {
         let button = null;
         if(!sessionStorage.getItem('isUserLogged')){
-            button = <Link className="login" to="/login"><span className="icon">☊</span>Login</Link>; 
+            button = <Link className="login" to="/login">Login<span className="icon">☊</span></Link>; 
         } else {
-            button = <a className="login" onClick={this.logout}><span className="icon">x</span>Logout</a>;
+            button = <div className="login"><Link className="favorites" to="/favorites">Favoritos<span className="icon">♥</span></Link><a className="logout" onClick={this.logout}>Logout<span className="icon">×</span></a></div>;
         }
 
         if (this.state.redirectToReferrer) {
-            this.state.redirectToReferrer=false;
+            this.setState({redirectToReferrer: false});
             return (<Redirect to={'/'} />)
         }
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 class Box extends React.Component {
   render() {
-    let {title, closeBtn, content} = this.props;
+    let {title, content} = this.props;
       return (
         <div className="box">
             <div className="title">
