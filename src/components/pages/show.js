@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-
+//import { Link } from 'react-router-dom'
+import Box from '../boxComponent/box';
 
 export default class Show extends React.Component {
   constructor(){
@@ -25,29 +25,27 @@ export default class Show extends React.Component {
           })
   }
   render() {
-      let show = this.state.Show.map((post) => (
-          <div className="music">
+    let favorites = null;
+    if(sessionStorage.getItem('isUserLogged')){
+        favorites = <div className="addFavorites"><span className='icon'>♥</span>Adicionar aos favoritos</div>
+    }
+      let show = this.state.Show.map((music) => (
+          <div key="{music.id}" className="music">
             <div className="cover">
               <div className="record"></div>
             </div>
             <div className="details">
-              <span className="num">{post.id}</span>
-              <span className="track">{post.track}</span>
-              <span className="artist">{post.artist}</span>
-              <span className="album">{post.album}</span>
-              <div className="addFavorites"><span className='icon'>♥</span>Adicionar aos favoritos</div>
+              <span className="track">{music.track}</span>
+              <span className="artist">{music.artist}</span>
+              <span className="album">{music.album}</span>
+              {favorites}
             </div>
           </div>
       ));
       return (
         <div className="show">
-        <div className="title">
-          Show da Música
-          <Link className="close" to="/">x</Link>
+            <Box title="Música" closeBtn={true} content={ show } />
         </div>
-        { show }
-        
-    </div>
       );
   }
 }

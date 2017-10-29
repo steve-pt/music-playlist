@@ -4,54 +4,6 @@
 // SHOW DA MUSICA
 // -------------------------------------------------------------------
 
-.show {
-    position: relative;
-    width:96%;
-    max-width: 640px;
-    margin: 0 auto;
-    text-align: left;
-    background: #111;
-    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.show .title {
-    position: relative;
-    width:100%;
-    padding:20px 40px 20px 20px;
-    box-sizing: border-box;
-    @include font-render(16px, $color-base, 700);
-    
-    @include tablet {
-        padding:15px 40px 15px 15px;
-    }
-
-    @include mobile {
-        padding:10px 40px 10px 10px;
-        font-size:14px;
-    }
-}
-
-.show .title .close {
-    position: absolute;
-    top:0;
-    bottom:0;
-    right:20px;
-    width:30px;
-    height:30px;
-    line-height:28px;
-    border-radius: 15px;
-    background: #333;
-    margin:auto;
-    display:block;
-    text-align: center;
-    @include font-render(18px, $color-base, 400);
-}
-// -------------------------------------------------------------------
-// MUSICA
-// -------------------------------------------------------------------
-
 .show .music {
     background: #222;
     display:table;
@@ -135,7 +87,7 @@
 
 .show .music .details .track {
     display:block;
-    @include font-render(48px, #999, 700);
+    @include font-render(48px, #AAA, 700);
     line-height: 100%;
     padding-bottom:4%;
     
@@ -150,7 +102,7 @@
 
 .show .music .details .artist {
     display:block;
-    @include font-render(24px, #666, 400);
+    @include font-render(24px, #999, 400);
     line-height: 100%;
     padding-bottom:4%;
     
@@ -165,7 +117,7 @@
 
 .show .music .details .album {
     display:block;
-    @include font-render(18px, #333, 400);
+    @include font-render(18px, #666, 400);
     line-height: 100%;
     padding-bottom:5%;
     
@@ -179,7 +131,7 @@
 .show .music .details .addFavorites {
     display: block;
     text-align: left;
-    @include font-render(12px, $color-base, 400);
+    @include font-render(12px, #999, 400);
     line-height: 100%;
     cursor: pointer;
 }

@@ -1,17 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Box from '../boxComponent/box';
 
-export default class List extends React.Component {
-  constructor(){
-      super(...arguments);
+export default class Favorites extends React.Component {
+    constructor(props) {
+        super(props);
       this.state = {
-        List: []
+        Favorites: []
       };
   }
   componentDidMount()
   {
-      fetch('http://localhost:8080/api/musics')
+    let user = JSON.parse(sessionStorage.getItem('userData'));
+    if(user){
+      fetch('http://localhost:8080/api/users/'+user.id+'/musics')
           .then((response) => {
               if(response.ok){
                   return response.json();
@@ -20,28 +22,27 @@ export default class List extends React.Component {
               }
           })
           .then((responseData) => {
-              this.setState({List:responseData});
+              this.setState({Favorites:responseData});
           })
+    } else {
+        <Redirect to={'/'} />
+    }
   }
   render() {
-        let favorites = null;
-        if(sessionStorage.getItem('isUserLogged')){
-            favorites = <Link className="addFavorites" to="/">♥</Link>
-        }
-
-      let list = this.state.List.map((music) => (
+      let favorites = this.state.Favorites.map((music) => (
           <li key={music.id}>
             <Link className="music" to={"/show/"+music.id}>
               <span className="track">{music.track}</span>
               <span className="artist">{music.artist} - <i>{music.album}</i></span>
             </Link>
-            {favorites}
           </li>
       ));
       return (
-        <div className="list">
-            <Box title="Playlist" closeBtn={false} content={<ul>{ list }</ul>} />
+        <div className="favorites">
+            <Box title="Favoritos" closeBtn={true} content={<ul>{ favorites }</ul>} />
         </div>
       );
   }
 }
+
+  

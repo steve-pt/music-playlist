@@ -1,0 +1,51 @@
+@import "_config.scss";
+
+// -------------------------------------------------------------------
+// LOGIN
+// -------------------------------------------------------------------
+
+.login .form {
+    display:block;
+    width:90%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+.login label {
+    display:block;
+    @include font-render(18px, #FFF, 700);
+    text-align: left;
+    margin-bottom:10px;
+}
+
+.login .input {
+    display:block;
+    width: 90%;
+    display: block;
+    height: 45px;
+    line-height: 43px;
+    background: #333;
+    padding: 0 4%;
+    border: 0;
+    @include font-render(16px, #FFF, 400);
+    margin-bottom:20px;
+}
+
+.login .button {
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-width: 200px;
+    border:0;
+    height: 54px;
+    line-height: 52px;
+    background-color: #333;
+    @include font-render(14px, #FFF, 700);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    cursor: pointer;
+}

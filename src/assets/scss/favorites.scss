@@ -1,16 +1,16 @@
 @import "_config.scss";
 
 // -------------------------------------------------------------------
-// LISTA DE MUSICAS
+// FAVORITOS
 // -------------------------------------------------------------------
 
-.list ul {
+.favorites ul {
     background: #222;
     font-size:0;
 }
 
 
-.list ul li {
+.favorites ul li {
     position: relative;
     display: table;
     width:100%;
@@ -21,11 +21,11 @@
     transition:background 200ms ease;
 }
 
-.list ul li:first-child {
+.favorites ul li:first-child {
     border-top: 0;
 }
 
-.list ul li:hover {
+.favorites ul li:hover {
     background: #333;
 }
 
@@ -36,7 +36,7 @@
 // -------------------------------------------------------------------
 
 // MUSICA
-.list ul li .music {
+.favorites ul li .music {
     display: table-cell;
     vertical-align:middle;
     width:85%;
@@ -52,7 +52,7 @@
     }
 }
 
-.list ul li .music:before {
+.favorites ul li .music:before {
     content:'♪';
     position: absolute;
     left:0;
@@ -63,7 +63,7 @@
     @include font-render(26px, $color-base, 400);
 }
 
-.list ul li .music .track {
+.favorites ul li .music .track {
     display:block;
     @include font-render(16px, $color-base, 400);
     
@@ -72,7 +72,7 @@
     }
 }
 
-.list ul li .music .artist {
+.favorites ul li .music .artist {
     display:block;
     @include font-render(14px, #999, 400);
     
@@ -81,12 +81,12 @@
     }
 }
 
-.list ul li .music .artist i {
+.favorites ul li .music .artist i {
     color:#666;
 }
 
 // FAVORITOS
-.list ul li .addFavorites {
+.favorites ul li .addFavorites {
     display: table-cell;
     vertical-align:middle;
     width:15%;
@@ -103,7 +103,8 @@
     }
 }
 
-.list ul li .addFavorites:hover {
+.favorites ul li .addFavorites:hover {
     color:#C30000;
     font-size: 34px;
 }
+
