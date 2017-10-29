@@ -37,9 +37,11 @@ export default class Favorites extends React.Component {
             </Link>
           </li>
       ));
+      let user = JSON.parse(sessionStorage.getItem('userData'));
+      let title = "Músicas favoritas de "+ user.username;
       return (
         <div className="favorites">
-            <Box title="Favoritos" closeBtn={true} content={<ul>{ favorites }</ul>} />
+            <Box title={title} closeBtn={true} content={<ul>{ favorites }</ul>} />
         </div>
       );
   }

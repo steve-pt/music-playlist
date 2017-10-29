@@ -103,7 +103,8 @@
     }
 }
 
-.list ul li .addFavorites:hover {
+.list ul li .addFavorites:hover,
+.list ul li .addFavorites.active {
     color:#C30000;
     font-size: 34px;
 }

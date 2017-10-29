@@ -6,14 +6,14 @@ export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
+            email: '',
             redirectToReferrer: false
         };
         this.login = this.login.bind(this);
         this.onChange = this.onChange.bind(this);
     }
     login() {
-        if (this.state.username) {
+        if (this.state.email) {
             let usersURL = 'http://localhost:8080/api/users';
 
             fetch(usersURL)
@@ -26,7 +26,7 @@ export default class Login extends React.Component {
                 })
                 .then((responseData) => {
                     responseData.map((user) => {
-                        if (user.email === this.state.username) {
+                        if (user.email === this.state.email) {
                             sessionStorage.setItem("isUserLogged", true);
                             sessionStorage.setItem('userData',JSON.stringify(user));
                             this.setState({redirectToReferrer: true});
@@ -57,7 +57,7 @@ export default class Login extends React.Component {
         return (
             <div className="form">
                 <label>Email</label>
-                <input type="text" className="input" name="username" placeholder="Email" onChange={this.onChange} />
+                <input type="text" className="input" name="email" placeholder="Insira o seu email de acesso" onChange={this.onChange} />
                 <input type="submit" className="button" value="Login" onClick={this.login} />
 
 

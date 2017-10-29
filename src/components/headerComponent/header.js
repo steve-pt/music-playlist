@@ -18,7 +18,10 @@ class Header extends Component {
         if(!sessionStorage.getItem('isUserLogged')){
             button = <Link className="login" to="/login">Login<span className="icon">☊</span></Link>; 
         } else {
-            button = <div className="login"><Link className="favorites" to="/favorites">Favoritos<span className="icon">♥</span></Link><a className="logout" onClick={this.logout}>Logout<span className="icon">×</span></a></div>;
+            button = <div className="login">
+                        <Link className="favorites" to="/favorites">Favoritos<span className="icon">♥</span></Link>
+                        <a className="logout" onClick={this.logout}>Logout<span className="icon">×</span></a>
+                    </div>;
         }
 
         if (this.state.redirectToReferrer) {

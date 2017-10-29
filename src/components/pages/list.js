@@ -6,9 +6,28 @@ export default class List extends React.Component {
   constructor(){
       super(...arguments);
       this.state = {
-        List: []
+        List: [],
       };
+      this.addFavorites = this.addFavorites.bind(this);
   }
+  addFavorites(idMusic) {
+      
+    let user = JSON.parse(sessionStorage.getItem('userData'));
+    if(user){
+       fetch('http://localhost:8080/api/users/'+user.id+'/musics', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            body: JSON.stringify({
+             musicid: idMusic
+            })
+        })
+        .then((response) => response.json())
+        .then((responseJson) => {
+            alert(responseJson.message);
+            return responseJson;
+        })
+    }
+}
   componentDidMount()
   {
       fetch('http://localhost:8080/api/musics')
@@ -24,18 +43,13 @@ export default class List extends React.Component {
           })
   }
   render() {
-        let favorites = null;
-        if(sessionStorage.getItem('isUserLogged')){
-            favorites = <Link className="addFavorites" to="/">♥</Link>
-        }
-
       let list = this.state.List.map((music) => (
           <li key={music.id}>
             <Link className="music" to={"/show/"+music.id}>
               <span className="track">{music.track}</span>
               <span className="artist">{music.artist} - <i>{music.album}</i></span>
             </Link>
-            {favorites}
+            {(sessionStorage.getItem('isUserLogged')) ? <a className="addFavorites" onClick={() => this.addFavorites(music.id)}>♥</a> : ""}            
           </li>
       ));
       return (
