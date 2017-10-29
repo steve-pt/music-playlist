@@ -10,8 +10,8 @@ export default class List extends React.Component {
         };
         this.addFavorite = this.addFavorite.bind(this);
     }
+    // ADICIONA AOS FAVORITOS
     addFavorite(idMusic) {
-
         let user = JSON.parse(sessionStorage.getItem('userData'));
         if (user) {
             fetch('http://localhost:8080/api/users/' + user.id + '/musics', {
@@ -28,6 +28,7 @@ export default class List extends React.Component {
                 })
         }
     }
+    // LISTA MUSICAS
     fetchData() {
         fetch('http://localhost:8080/api/musics')
             .then((response) => {

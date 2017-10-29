@@ -12,6 +12,7 @@ export default class Login extends React.Component {
         this.login = this.login.bind(this);
         this.onChange = this.onChange.bind(this);
     }
+    // ACCAO DE LOGIN
     login() {
         if (this.state.email) {
             let usersURL = 'http://localhost:8080/api/users';

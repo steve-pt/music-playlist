@@ -9,8 +9,8 @@ export default class Show extends React.Component {
       Show: []
     };
   }
+  // ADICIONA AOS FAVORITOS
   addFavorite(idMusic) {
-
     let user = JSON.parse(sessionStorage.getItem('userData'));
     if (user) {
       fetch('http://localhost:8080/api/users/' + user.id + '/musics', {
@@ -27,6 +27,7 @@ export default class Show extends React.Component {
         })
     }
   }
+  // BUSCAR MUSICA
   fetchData() {
     fetch('http://localhost:8080/api/musics/' + this.state.id)
       .then((response) => {

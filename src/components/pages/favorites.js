@@ -10,8 +10,8 @@ export default class Favorites extends React.Component {
         };
         this.removeFavorite = this.removeFavorite.bind(this);
     }
+    // REMOVER DOS FAVORITOS
     removeFavorite(idMusic) {
-
         let user = JSON.parse(sessionStorage.getItem('userData'));
         if (user) {
             fetch('http://localhost:8080/api/users/' + user.id + '/musics/' + idMusic, {
@@ -25,6 +25,7 @@ export default class Favorites extends React.Component {
                 })
         }
     }
+    // BUSCAR FAVORITOS
     fetchData() {
         let user = JSON.parse(sessionStorage.getItem('userData'));
         if (user) {
