@@ -19,7 +19,11 @@ export default class Login extends React.Component {
             fetch(usersURL)
                 .then((response) => {
                     if (response.ok) {
-                        return response.json();
+                        if (response.status === 204) {
+                            return [];
+                        } else {
+                            return response.json();
+                        }
                     } else {
                         throw new Error("Server response wasn't OK");
                     }
@@ -28,15 +32,15 @@ export default class Login extends React.Component {
                     responseData.map((user) => {
                         if (user.email === this.state.email) {
                             sessionStorage.setItem("isUserLogged", true);
-                            sessionStorage.setItem('userData',JSON.stringify(user));
-                            this.setState({redirectToReferrer: true});
+                            sessionStorage.setItem('userData', JSON.stringify(user));
+                            this.setState({ redirectToReferrer: true });
                         }
                         return this.state.redirectToReferrer;
                     });
 
-                    if(!sessionStorage.getItem('isUserLogged'))
+                    if (!sessionStorage.getItem('isUserLogged'))
                         alert("Email não encontrado!");
-                    
+
                 })
         }
     }
@@ -59,8 +63,6 @@ export default class Login extends React.Component {
                 <label>Email</label>
                 <input type="text" className="input" name="email" placeholder="Insira o seu email de acesso" onChange={this.onChange} />
                 <input type="submit" className="button" value="Login" onClick={this.login} />
-
-
             </div>
         )
     }

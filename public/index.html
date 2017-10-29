@@ -14,5 +14,6 @@
       Precisa de activar o JavaScript para executar este aplicativo.
     </noscript>
     <div id="root"></div>
+    <script type="text/javascript">function createCustomAlert(e){d=top.document,d.getElementById("modalContainer")||(mObj=d.getElementsByTagName("body")[0].appendChild(d.createElement("div")),mObj.id="modalContainer",mObj.style.height=d.documentElement.scrollHeight+"px",alertObj=mObj.appendChild(d.createElement("div")),alertObj.id="alertBox",alertObj.style.visiblity="visible",h1=alertObj.appendChild(d.createElement("h1")),h1.appendChild(d.createTextNode("Music Playlist")),msg=alertObj.appendChild(d.createElement("p")),msg.innerHTML=e.replace(/\r\n/g,"<br />").replace(/\n/g,"<br />"),btn=alertObj.appendChild(d.createElement("a")),btn.id="closeBtn",btn.appendChild(d.createTextNode("OK")),btn.href="#",btn.focus(),btn.onclick=function(){return removeCustomAlert(),!1},alertObj.style.display="table")}function removeCustomAlert(){top.document.getElementsByTagName("body")[0].removeChild(top.document.getElementById("modalContainer"))}top.document.getElementById&&(window.alert=function(e){createCustomAlert(e)});</script>
   </body>
 </html>

@@ -6,19 +6,24 @@
 
 .list ul {
     background: #222;
-    font-size:0;
+    font-size: 0;
 }
 
 
 .list ul li {
     position: relative;
     display: table;
-    width:100%;
-    box-sizing: border-box;
-    border-top:1px solid #333;
-    font-size:0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    border-top: 1px solid #333;
+    font-size: 0;
     background: #222;
-    transition:background 200ms ease;
+    -webkit-transition: background 200ms ease;
+    -o-transition: background 200ms ease;
+    -moz-transition: background 200ms ease;
+    transition: background 200ms ease;
 }
 
 .list ul li:first-child {
@@ -38,66 +43,73 @@
 // MUSICA
 .list ul li .music {
     display: table-cell;
-    vertical-align:middle;
-    width:85%;
-    padding:10px 10px 10px 40px;
-    box-sizing: border-box;
-    
+    vertical-align: middle;
+    width: 85%;
+    padding: 10px 10px 10px 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+
     @include tablet {
-        padding:5px 5px 5px 40px;
+        padding: 5px 5px 5px 40px;
     }
 
     @include mobile {
-        padding:5px 5px 5px 40px;
+        padding: 5px 5px 5px 40px;
     }
 }
 
 .list ul li .music:before {
-    content:'♪';
+    content: '♪';
     position: absolute;
-    left:0;
+    left: 0;
     width: 40px;
     height: 100%;
-    margin:auto;
+    margin: auto;
     text-align: center;
     @include font-render(26px, $color-base, 400);
 }
 
 .list ul li .music .track {
-    display:block;
+    display: block;
     @include font-render(16px, $color-base, 400);
-    
+
     @include mobile {
         font-size: 14px;
     }
 }
 
 .list ul li .music .artist {
-    display:block;
+    display: block;
     @include font-render(14px, #999, 400);
-    
+
     @include mobile {
         font-size: 12px;
     }
 }
 
 .list ul li .music .artist i {
-    color:#666;
+    color: #666;
 }
 
 // FAVORITOS
 .list ul li .addFavorites {
     display: table-cell;
-    vertical-align:middle;
-    width:15%;
-    height:100%;
-    box-sizing: border-box;
-    margin:auto;
+    vertical-align: middle;
+    width: 15%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    margin: auto;
     text-align: center;
     @include font-render(26px, $color-base, 400);
-    transition:color 200ms ease,font-size 100ms ease;
+    -webkit-transition: color 200ms ease,font-size 100ms ease;
+    -o-transition: color 200ms ease,font-size 100ms ease;
+    -moz-transition: color 200ms ease,font-size 100ms ease;
+    transition: color 200ms ease,font-size 100ms ease;
     cursor: pointer;
-    
+
     @include mobile {
         font-size: 22px;
     }
@@ -105,6 +117,6 @@
 
 .list ul li .addFavorites:hover,
 .list ul li .addFavorites.active {
-    color:#C30000;
+    color: #C30000;
     font-size: 34px;
 }

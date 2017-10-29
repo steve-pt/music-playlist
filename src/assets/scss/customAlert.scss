@@ -1,0 +1,106 @@
+@import "_config.scss";
+
+// -------------------------------------------------------------------
+// CUSTOM ALERT
+// -------------------------------------------------------------------
+
+#modalContainer {
+    position: absolute;
+    width: 100%;
+    height: 100% !important;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+#modalContainer:after {
+    content: '';
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 999;
+    -ms-zoom: 1;
+    zoom: 1;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+#alertBox {
+    position: relative;
+    width: 420px;
+    min-height: 100px;
+    margin-top: 50px;
+    left: 50%;
+    right: 0;
+    margin: auto;
+    top: 30%;
+    z-index: 10001;
+    margin-left: -210px;
+    text-align: center;
+    background: #222;
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+         box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    overflow: hidden;
+}
+
+#modalContainer > #alertBox {
+    position: fixed;
+}
+
+#alertBox h1 {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background: #111;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    @include font-render(16px, $color-base, 400,$font-alt);
+}
+
+#alertBox p {
+    @include font-render(14px, #FFF, 400);
+    background: #222;
+    display: table;
+    width: 100%;
+    padding: 20px 0 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+#closeBtn {
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    min-width: 200px;
+    margin: 20px auto;
+    border: 0;
+    height: 44px;
+    line-height: 42px;
+    background-color: #333;
+    @include font-render(14px, #FFF, 700);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    -webkit-transition: background 150ms ease;
+    -o-transition: background 150ms ease;
+    -moz-transition: background 150ms ease;
+    transition: background 150ms ease;
+}
+
+#closeBtn:hover {
+    background: #111;
+}

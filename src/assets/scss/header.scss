@@ -1,31 +1,37 @@
 @import "_config.scss";
 
+// -------------------------------------------------------------------
+// HEADER
+// -------------------------------------------------------------------
+
 header {
     position: fixed;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     z-index: 2;
     width: 100%;
     height: 80px;
     background: #000;
-    margin:0 auto;
-    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+         box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
 
     @include tablet {
         height: 65px;
     }
 
     @include mobile {
-        height:50px;
+        height: 50px;
     }
 }
 
 header .logo {
-    width:70%;
+    width: 70%;
     display: inline-block;
     vertical-align: middle;
-    text-align:left;
-    @include font-render(32px, $color-base, 400,  $font-alt);
+    text-align: left;
+    @include font-render(32px, $color-base, 400, $font-alt);
 
     @include tablet {
         font-size: 28px;
@@ -37,13 +43,13 @@ header .logo {
 }
 
 header .login {
-    width:30%;
+    width: 30%;
     display: inline-block;
     vertical-align: middle;
-    text-align:right;
+    text-align: right;
     @include font-render(14px, $color-base, 700);
-    cursor:pointer;
-    
+    cursor: pointer;
+
     @include mobile {
         font-size: 0;
     }
@@ -52,10 +58,10 @@ header .login {
 header .logout {
     display: inline-block;
     vertical-align: middle;
-    text-align:right;
+    text-align: right;
     @include font-render(14px, $color-base, 700);
-    cursor:pointer;
-    
+    cursor: pointer;
+
     @include mobile {
         font-size: 0;
     }
@@ -64,32 +70,35 @@ header .logout {
 
 header .favorites {
     display: inline-block;
-    padding-right:20px;
+    padding-right: 20px;
     vertical-align: middle;
-    text-align:right;
+    text-align: right;
     @include font-render(14px, $color-base, 700);
-    cursor:pointer;
-    
+    cursor: pointer;
+
     @include mobile {
         font-size: 0;
     }
 }
 
 header a {
-    transition:color 100ms ease;
+    -webkit-transition: color 100ms ease;
+    -o-transition: color 100ms ease;
+    -moz-transition: color 100ms ease;
+    transition: color 100ms ease;
 }
+
 header a:hover {
-    color:#999;
+    color: #999;
 }
 
 
-header  .icon {
+header .icon {
     position: relative;
-    top:-2px;
-    display:inline-block;
+    top: -2px;
+    display: inline-block;
     vertical-align: middle;
     line-height: 120%;
     padding-left: 10px;
     @include font-render(24px, "inherit", 400);
 }
-

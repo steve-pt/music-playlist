@@ -6,33 +6,44 @@
 
 .show .music {
     background: #222;
-    display:table;
-    width:100%;
-    padding:20px;
-    box-sizing: border-box;
+    display: table;
+    width: 100%;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
 }
 
 
 // CAPA
 .show .cover {
     display: table-cell;
-    vertical-align:middle;
-    width:200px;
-    
+    vertical-align: middle;
+    width: 200px;
+
     @include mobile {
         width: 100px;
     }
 }
 
 .show .cover .record {
-    width:200px;
+    position:relative;
+    width: 200px;
     height: 200px;
-	border: 2px solid #333;
-	box-sizing: border-box;
-	border-radius: 50%;
-	background: repeating-radial-gradient(#000 0%, #010101 2%, #101010 3%);
-	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-    will-change: transform;
+    border: 2px solid #333;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    background: -webkit-repeating-radial-gradient(#000 0%, #010101 2%, #101010 3%);
+    background: -moz-repeating-radial-gradient(#000 0%, #010101 2%, #101010 3%);
+    background: -o-repeating-radial-gradient(#000 0%, #010101 2%, #101010 3%);
+    background: repeating-radial-gradient(#000 0%, #010101 2%, #101010 3%);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+         box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 
     @include mobile {
         width: 100px;
@@ -42,35 +53,43 @@
 
 .show .cover .record:before,
 .show .cover .record:after {
-	content: "";
-	position: absolute;
-	border-radius: 50%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    content: "";
+    position: absolute;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+         transform: translate(-50%, -50%);
 }
 
 .show .cover .record:before {
-	height: 30%;
-	width: 30%;
-	background: #999;
-	border: 2px solid #fff;
+    height: 30%;
+    width: 30%;
+    background: #999;
+    border: 2px solid #fff;
 }
 
 .show .cover .record:after {
-	height: 5%;
-	width: 5%;
-	background: #222;
+    height: 5%;
+    width: 5%;
+    background: #222;
 }
 
 
 // DETALHES
 .show .music .details {
     display: table-cell;
-    vertical-align:middle;
+    vertical-align: middle;
     padding-left: 40px;
-    box-sizing: border-box;
-    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+
     @include tablet {
         padding-left: 30px;
     }
@@ -81,16 +100,16 @@
 }
 
 .show .music .details .num {
-    display:block;
+    display: block;
     @include font-render(14px, $color-base, 400);
 }
 
 .show .music .details .track {
-    display:block;
+    display: block;
     @include font-render(48px, #AAA, 700);
     line-height: 100%;
-    padding-bottom:4%;
-    
+    padding-bottom: 4%;
+
     @include tablet {
         font-size: 34px;
     }
@@ -101,11 +120,11 @@
 }
 
 .show .music .details .artist {
-    display:block;
+    display: block;
     @include font-render(24px, #999, 400);
     line-height: 100%;
-    padding-bottom:4%;
-    
+    padding-bottom: 4%;
+
     @include tablet {
         font-size: 20px;
     }
@@ -116,13 +135,13 @@
 }
 
 .show .music .details .album {
-    display:block;
+    display: block;
     @include font-render(18px, #666, 400);
     line-height: 100%;
-    padding-bottom:5%;
-    
+    padding-bottom: 5%;
+
     @include mobile {
-        font-size:16px;
+        font-size: 16px;
     }
 }
 
@@ -138,15 +157,18 @@
 
 .show .music .details .addFavorites .icon {
     position: relative;
-    top:-2px;
-    display:inline-block;
+    top: -2px;
+    display: inline-block;
     vertical-align: middle;
     line-height: 120%;
     padding-right: 10px;
     @include font-render(24px, $color-base, 400);
-    transition:color 200ms ease;
+    -webkit-transition: color 200ms ease;
+    -o-transition: color 200ms ease;
+    -moz-transition: color 200ms ease;
+    transition: color 200ms ease;
 }
 
 .show .music .details .addFavorites:hover .icon {
-    color:#C30000;
+    color: #C30000;
 }

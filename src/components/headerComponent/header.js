@@ -11,37 +11,37 @@ class Header extends Component {
     }
     logout() {
         sessionStorage.clear();
-        this.setState({redirectToReferrer: true});
+        this.setState({ redirectToReferrer: true });
     }
     render() {
         let button = null;
-        if(!sessionStorage.getItem('isUserLogged')){
-            button = <Link className="login" to="/login">Login<span className="icon">☊</span></Link>; 
+        if (!sessionStorage.getItem('isUserLogged')) {
+            button = <Link className="login" to="/login">Login<span className="icon">☊</span></Link>;
         } else {
             button = <div className="login">
-                        <Link className="favorites" to="/favorites">Favoritos<span className="icon">♥</span></Link>
-                        <a className="logout" onClick={this.logout}>Logout<span className="icon">×</span></a>
-                    </div>;
+                <Link className="favorites" to="/favorites">Favoritos<span className="icon">♥</span></Link>
+                <a className="logout" onClick={this.logout}>Logout<span className="icon">×</span></a>
+            </div>;
         }
 
         if (this.state.redirectToReferrer) {
-            this.setState({redirectToReferrer: false});
+            this.setState({ redirectToReferrer: false });
             return (<Redirect to={'/'} />)
         }
 
-    return (
-        <header>
-            <div className="w-max">
-                <div className="tbl">
-                    <div className="tblcell">
-                        <Link className="logo" to="/">Music Playlist</Link>
-                        {button}
+        return (
+            <header>
+                <div className="w-max">
+                    <div className="tbl">
+                        <div className="tblcell">
+                            <Link className="logo" to="/">Music Playlist</Link>
+                            {button}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
-    );
-  }
+            </header>
+        );
+    }
 }
 
 export default Header;

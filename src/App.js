@@ -16,8 +16,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
-        <Header />
+        <div className="App">
+          <Header />
           <div className="container">
             <div className="tbl">
               <div className="tblcell">
@@ -28,11 +28,12 @@ class App extends Component {
               </div>
             </div>
           </div>
-        <Footer />
-      </div>
+          <Footer />
+        </div>
       </Router>
     );
   }
 }
 
 export default App;
+

@@ -3,7 +3,6 @@
 //Dependencies
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
@@ -22,10 +21,6 @@ gulp.task('compile_scss',function(){
 
     gulp.src(SCSS_SRC)
     .pipe(sass().on('error',sass.logError))
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
     .pipe(minifyCSS())
     .pipe(please())
     .pipe(concat("default.min.css"))
